@@ -1,0 +1,33 @@
+@import "fonts";
+@import "mixin";
+@import "colors";
+
+$breakpoint_1200: 1200px;
+$breakpoint_1024: 1024px;
+$breakpoint_767: 767px;
+$breakpoint_576: 576px;
+
+
+@mixin mw_1200() {
+  @media (max-width: $breakpoint_1200) {
+    @content;
+  }
+}
+
+@mixin mw_1024() {
+  @media (max-width: $breakpoint_1024) {
+    @content;
+  }
+}
+
+@mixin mw_767() {
+  @media (max-width: $breakpoint_767) {
+    @content;
+  }
+}
+
+@mixin mw_576() {
+  @media (max-width: $breakpoint_576) {
+    @content;
+  }
+}

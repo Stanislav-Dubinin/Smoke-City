@@ -1,0 +1,163 @@
+@import "colors";
+
+@mixin w {
+  width: 108px;
+}
+
+@mixin logo {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+
+  &:hover {
+    transform: rotate(5deg);
+  }
+}
+
+@mixin gradient-link {
+  background-image: linear-gradient(
+                  to right,
+                  $blue-violet,
+                  $blue-violet 50%,
+                  $white 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:before {
+    content: '';
+    background: $blue-violet;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background-position: 0;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+@mixin box-shaw {
+  &:hover {
+    box-shadow: 0 0 12px $blue-violet__box-shadow;
+  }
+}
+
+@mixin box-sizing-border-box {
+  box-sizing: border-box;
+}
+
+@mixin body-back-image($opacity) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: $opacity;
+  z-index: -1;
+}
+
+@mixin grid-2col-auto {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+@mixin grid-4col-auto {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+@mixin btn($width) {
+  background-color: $blue-violet;
+  box-sizing: border-box;
+  width: $width;
+  height: 50px;
+  border: 0;
+  font-family: montserratMedium, sans-serif;
+  font-size: 15px;
+  color: $white;
+  transition: box-shadow 0.7s ease;
+  cursor: pointer;
+  @include box-shaw;
+}
+
+@mixin advantage-one-two-tree($widthTT) {
+  width: $widthTT;
+  box-sizing: border-box;
+  border: 1px solid $blue-violet;
+}
+
+@mixin heading {
+  font-size: 20px;
+  font-family: pantonExtraBold, sans-serif;
+  color: $blue-violet;
+}
+
+@mixin p-text {
+  font-size: 15px;
+  color: $white;
+  line-height: 1.333;
+}
+
+@mixin h2 {
+  font-size: 30px;
+  font-family: pantonExtraBold, sans-serif;
+  color: $white;
+}
+
+@mixin display-none {
+  display: none;
+}
+
+@mixin w-282 {
+  width: 282px;
+}
+
+@mixin div-image($url) {
+  display: block;
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin background-image($urlImg) {
+  background-image: $urlImg;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin width-height-image($wi, $hi) {
+  width: $wi;
+  height: $hi;
+}
+
+@mixin dots-navigation {
+  border: 1px solid $blue-violet;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+
+@mixin dots-block {
+  display: none;
+  gap: 10px;
+  justify-content: center;
+}
